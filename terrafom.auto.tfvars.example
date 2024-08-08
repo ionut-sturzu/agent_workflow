@@ -30,7 +30,7 @@ compartment_id         = "ocid1.compartment.oc1..aaaaaaaagrabkopwvu74dho7jpma2qv
 
 # Jupyter Hub deployment values
 jupyter_admin_user     = "oracle-ai"
-jupyter_admin_password = "123456"
+jupyter_admin_password = ""
 jupyter_playbooks_repo = "https://github.com/ionut-sturzu/notebooks.git"
 
 # NIM Deployment values
@@ -42,6 +42,6 @@ NGC_API_KEY            = ""
 cuopt_version = "https://helm.ngc.nvidia.com/nvidia/charts/cuopt-24.03.00.tgz"
 
 # VLLM deployment values
-HF_TOKEN = "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"
+HF_TOKEN = ""
 LLM_API_KEY = "" 
 model_name = "meta-llama/CodeLlama-7b-Instruct-hf"
