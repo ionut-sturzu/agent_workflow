@@ -1,0 +1,47 @@
+# ORM injected values
+
+tenancy_ocid         = "ocid1.tenancy.oc1..aaaaaaaaiyavtwbz4kyu7g7b6wglllccbflmjx2lzk5nwpbme44mv54xu7dq"            # Get this from OCI Console (after logging in, go to top-right-most menu item and click option "Tenancy: <your tenancy name>").
+user_ocid            = "ocid1.user.oc1..aaaaaaaayslqqslkc7niz6wbqo5ndlukoa74cshm6lynu6uppo3bwtgo22aq"               # Get this from OCI Console (after logging in, go to top-right-most menu item and click option "My profile").
+fingerprint          = "4d:d3:13:98:ec:4b:07:19:ee:d1:27:b4:88:3d:3f:d5"     # The fingerprint can be gathered from your user account. In the "My profile page, click "API keys" on the menu in left hand side.
+private_key_path     = "/Users/isturzu/.oci/oci_api_key.pem" # This is the full path on your local system to the API signing private key.
+private_key_password = ""                          # This is the password that protects the private key, if any.
+region               = "eu-frankfurt-1"  
+# region            = "eu-frankfurt-1"
+# tenancy_ocid      = "ocid1.tenancy.oc1..aaaaaaaaiyavtwbz4kyu7g7b6wglllccbflmjx2lzk5nwpbme44mv54xu7dq"
+compartment_ocid  = "ocid1.compartment.oc1..aaaaaaaagrabkopwvu74dho7jpma2qvbsukj2yibwzetwoyykhlqt2mfwsjq"
+
+# OKE Terraform module values
+create_iam_resources     = false
+create_iam_tag_namespace = false
+ssh_public_key           = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC/5rmh1rBfLYNM7aWE9kWQnaYAlKWP/unVzs6vk7ezUKnEunqx6wmNc1YRV8jE0sA33Fhs9wvrJYAscTjkKftK7bF+wcc3ja2xIeoAS7Ln+jdLTi/2H1z2A61w51yPUa8fK2f/6iQfxL9AD2h9DxMoBHqbwlT9pao3+n6qg7oaSlly8Hl+84QtRtrKeH/SP/faxrnZPBYsgblFMLFoeA3Jjm2g/B+ppM7ajWEmN1UetzCQ4NLdnhB6NTtpxj8YZMxbO2gFkboyoho+GL9bUEwqgc3MUmrEraFKLhcHkBbpt401jOVTB4MV+nB1HlDMkaHLWfLG1llO8xD3iGhvv5qzVpcJ0G/AFgQa5tUHgCRiQAvDuoavLEZ9939sn8mp77UFQezNFEmN6hRtjOlk/OxZLX69qfWli8qEXQ7o5VzE0tHT7w2UDrz64Ys2elx+Gmuuhc+yiXNa7H/NoVLjrF2uNO5Tj5qZ1KFTZY4X2ujTJs+Q8K6+8nBBhHsTlDetkPU= isturzu@isturzu-mac"
+
+## NodePool with non-GPU shape is created by default with size 1
+simple_np_flex_shape   = { "instanceShape" = "VM.Standard.E4.Flex", "ocpus" = 2, "memory" = 12 }
+
+## NodePool with GPU shape is created by default with size 0
+gpu_np_size  = 4
+gpu_np_shape = "VM.GPU.A10.1"
+gpu_np_boot_volume_size = 200
+
+## OKE Deployment values
+cluster_name           = "oke-nim"
+vcn_name               = "oke-vcn"
+compartment_id         = "ocid1.compartment.oc1..aaaaaaaagrabkopwvu74dho7jpma2qvbsukj2yibwzetwoyykhlqt2mfwsjq"
+
+# Jupyter Hub deployment values
+jupyter_admin_user     = "oracle-ai"
+jupyter_admin_password = "123456"
+jupyter_playbooks_repo = "https://github.com/ionut-sturzu/notebooks.git"
+
+# NIM Deployment values
+nim_image_repository   = "nvcr.io/nim/meta/llama3-8b-instruct"
+nim_image_tag          = "latest"
+NGC_API_KEY            = ""
+
+#cuopt
+cuopt_version = "https://helm.ngc.nvidia.com/nvidia/charts/cuopt-24.03.00.tgz"
+
+# VLLM deployment values
+HF_TOKEN = "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"
+LLM_API_KEY = "" 
+model_name = "meta-llama/CodeLlama-7b-Instruct-hf"
