@@ -1,14 +1,12 @@
 # ORM injected values
 
-tenancy_ocid         = "ocid1.tenancy.oc1..aaaaaaaaiyavtwbz4kyu7g7b6wglllccbflmjx2lzk5nwpbme44mv54xu7dq"            # Get this from OCI Console (after logging in, go to top-right-most menu item and click option "Tenancy: <your tenancy name>").
-user_ocid            = "ocid1.user.oc1..aaaaaaaayslqqslkc7niz6wbqo5ndlukoa74cshm6lynu6uppo3bwtgo22aq"               # Get this from OCI Console (after logging in, go to top-right-most menu item and click option "My profile").
-fingerprint          = "4d:d3:13:98:ec:4b:07:19:ee:d1:27:b4:88:3d:3f:d5"     # The fingerprint can be gathered from your user account. In the "My profile page, click "API keys" on the menu in left hand side.
-private_key_path     = "/Users/isturzu/.oci/oci_api_key.pem" # This is the full path on your local system to the API signing private key.
+tenancy_ocid         = "ocid1.tenancy.oc1.."            # Get this from OCI Console (after logging in, go to top-right-most menu item and click option "Tenancy: <your tenancy name>").
+user_ocid            = "ocid1.user.oc1.."               # Get this from OCI Console (after logging in, go to top-right-most menu item and click option "My profile").
+fingerprint          = ""     # The fingerprint can be gathered from your user account. In the "My profile page, click "API keys" on the menu in left hand side.
+private_key_path     = "" # This is the full path on your local system to the API signing private key.
 private_key_password = ""                          # This is the password that protects the private key, if any.
-region               = "eu-frankfurt-1"  
-# region            = "eu-frankfurt-1"
-# tenancy_ocid      = "ocid1.tenancy.oc1..aaaaaaaaiyavtwbz4kyu7g7b6wglllccbflmjx2lzk5nwpbme44mv54xu7dq"
-compartment_ocid  = "ocid1.compartment.oc1..aaaaaaaagrabkopwvu74dho7jpma2qvbsukj2yibwzetwoyykhlqt2mfwsjq"
+region               = "eu-frankfurt-1"
+compartment_ocid  = "ocid1.compartment.oc1.."
 
 # OKE Terraform module values
 create_iam_resources     = false
@@ -26,7 +24,7 @@ gpu_np_boot_volume_size = 200
 ## OKE Deployment values
 cluster_name           = "oke-nim"
 vcn_name               = "oke-vcn"
-compartment_id         = "ocid1.compartment.oc1..aaaaaaaagrabkopwvu74dho7jpma2qvbsukj2yibwzetwoyykhlqt2mfwsjq"
+compartment_id         = "ocid1.compartment.oc1.."
 
 # Jupyter Hub deployment values
 jupyter_admin_user     = "oracle-ai"

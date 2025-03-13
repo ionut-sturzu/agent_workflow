@@ -95,7 +95,7 @@ resource "null_resource" "helm_deployment_via_operator" {
         "if [ -s \"${local.operator_helm_values_override_user_file_path}\" ]; then",
         "if [ \"${var.deployment_name}\" = \"cuopt\" ]; then",
         join(" ", concat([
-          "helm upgrade --install cuopt ${var.cuopt_version} --namespace ${var.namespace} --create-namespace --wait --username '$oauthtoken' --password '${var.NGC_API_KEY}' --timeout 10m0s",
+          "helm upgrade --install cuopt ${var.cuopt_version} --namespace ${var.namespace} --create-namespace --wait --username '$oauthtoken' --password '${var.NGC_API_KEY}' --timeout 20m0s",
           "-f ${local.operator_helm_values_override_template_file_path}",
           "-f ${local.operator_helm_values_override_user_file_path}"
         ], var.deployment_extra_args)),
@@ -111,7 +111,7 @@ resource "null_resource" "helm_deployment_via_operator" {
         "else",
         "if [ \"${var.deployment_name}\" = \"cuopt\" ]; then",
         join(" ", concat([
-          "helm upgrade --install cuopt ${var.cuopt_version} --namespace ${var.namespace} --create-namespace --wait --username '$oauthtoken' --password '${var.NGC_API_KEY}' --timeout 10m0s",
+          "helm upgrade --install cuopt ${var.cuopt_version} --namespace ${var.namespace} --create-namespace --wait --username '$oauthtoken' --password '${var.NGC_API_KEY}' --timeout 20m0s",
           "-f ${local.operator_helm_values_override_template_file_path}"
         ], var.deployment_extra_args)),
         "else",
@@ -195,7 +195,7 @@ resource "null_resource" "helm_deployment_from_local" {
       cat "${local.local_helm_values_override_user_file_path}"
       echo ""
       if [ "${var.deployment_name}" == "cuopt" ]; then
-      helm upgrade --install cuopt ${var.cuopt_version} --namespace ${var.namespace} --create-namespace --wait --username '$oauthtoken' --password '${var.NGC_API_KEY}' --timeout 10m0s \
+      helm upgrade --install cuopt ${var.cuopt_version} --namespace ${var.namespace} --create-namespace --wait --username '$oauthtoken' --password '${var.NGC_API_KEY}' --timeout 20m0s \
           -f ${local.local_helm_values_override_template_file_path} \
           -f ${local.local_helm_values_override_user_file_path} ${join(" ", var.deployment_extra_args)}
       else
@@ -212,7 +212,7 @@ resource "null_resource" "helm_deployment_from_local" {
       cat "${local.local_helm_values_override_template_file_path}"
       echo ""
       if [ "${var.deployment_name}" == "cuopt" ]; then
-      helm upgrade --install cuopt ${var.cuopt_version} --namespace ${var.namespace} --create-namespace --wait --username '$oauthtoken' --password '${var.NGC_API_KEY}' --timeout 10m0s \
+      helm upgrade --install cuopt ${var.cuopt_version} --namespace ${var.namespace} --create-namespace --wait --username '$oauthtoken' --password '${var.NGC_API_KEY}' --timeout 20m0s \
           -f ${local.local_helm_values_override_template_file_path} ${join(" ", var.deployment_extra_args)}
       else
       helm upgrade --install ${var.deployment_name} \

@@ -13,7 +13,7 @@ locals {
 # This module is using a modified version of the oke-terraform-module to address the compatibility with Terraform versions < 1.3.0
 # The OKE module documentation is available here: https://oracle-terraform-modules.github.io/terraform-oci-oke/
 module "oke" {
-  source = "git::https://github.com/robo-cap/terraform-oci-oke.git?ref=3bec8d1"
+  source = "git::https://github.com/robo-cap/terraform-oci-oke.git?ref=v5.1.8-ai"
 
   providers = {
     oci.home = oci.home

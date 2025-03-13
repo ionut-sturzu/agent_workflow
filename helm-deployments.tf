@@ -170,7 +170,7 @@ module "nim" {
   ]
   deployment_extra_args = [
     "--set service.name=llama3",
-    "--timeout 10m0s"
+    "--timeout 20m0s"
   ]
   post_deployment_commands = []
 
@@ -217,7 +217,7 @@ module "code_llama" {
     "--set ingress.tls[0].hosts[0]=codellama.$${PUBLIC_IP}.nip.io",
     "--set ingress.tls[0].secretName=llm-tls",
     "--set service.name=codellama",
-    "--timeout 10m0s"
+    "--timeout 20m0s"
   ]
   post_deployment_commands = []
 
